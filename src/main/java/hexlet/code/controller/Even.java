@@ -2,20 +2,15 @@ package hexlet.code.controller;
 
 import hexlet.code.view.CliForEven;
 
-import java.util.Random;
+public final class Even implements IGame {
 
-public class Even {
-
-    static final int MAX_RANDOM = 1000;
-    static final int NUMBER_OF_TRIES = 3;
-
-    public static void playTheGame() {
+    public void playTheGame() {
 
         String playerName = CliForEven.getPlayerName();
         CliForEven.printStartingMessage();
 
         for (int i = 0; i < NUMBER_OF_TRIES; i++) {
-            int number = generateRandomInteger(); // 0..999
+            int number = IGame.generateRandomInteger();
             CliForEven.printQuestion(number);
 
             String playerAnswer = CliForEven.getAnswer();
@@ -32,10 +27,5 @@ public class Even {
         }
 
         CliForEven.printCongratulations(playerName);
-    }
-
-    private static int generateRandomInteger() {
-        Random rand = new Random();
-        return rand.nextInt(MAX_RANDOM);
     }
 }

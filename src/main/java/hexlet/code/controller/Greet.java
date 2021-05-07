@@ -2,9 +2,9 @@ package hexlet.code.controller;
 
 import hexlet.code.view.Cli;
 
-public class Greet {
+public final class Greet implements IGame {
 
-    public static void playTheGame() {
+    public void playTheGame() {
         Cli.getPlayerName();
     }
 }
