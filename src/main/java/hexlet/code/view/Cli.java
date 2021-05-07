@@ -38,6 +38,6 @@ public class Cli {
 
     public static void printError() {
         System.out.println("ERROR! Invalid input!");
-        Cli.finishTheApp();
+        finishTheApp();
     }
 }
