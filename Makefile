@@ -1,5 +1,6 @@
 install:
 	./gradlew clean install
+	./gradlew checkstyleMain
 
 run-dist:
 	./build/install/app/bin/app
