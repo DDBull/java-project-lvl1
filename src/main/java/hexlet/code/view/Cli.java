@@ -42,7 +42,6 @@ public class Cli {
         finishTheApp();
     }
 
-
     public static void printCongratulations(String playerName) {
         System.out.printf("Congratulations, %s!\n", playerName);
     }
@@ -54,5 +53,9 @@ public class Cli {
     public static String getAnswer() {
         System.out.print("Your answer: ");
         return new Scanner(System.in).nextLine();
+    }
+
+    public static void printStartingMessage(String message) {
+        System.out.println(message);
     }
 }

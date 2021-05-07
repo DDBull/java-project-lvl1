@@ -1,31 +1,31 @@
 package hexlet.code.controller;
 
-import hexlet.code.view.CliForEven;
+import hexlet.code.view.EvenCli;
 
 public final class Even implements IGame {
 
     public void playTheGame() {
 
-        String playerName = CliForEven.getPlayerName();
-        CliForEven.printStartingMessage();
+        String playerName = EvenCli.getPlayerName();
+        EvenCli.printStartingMessage("Answer 'yes' if the number is even, otherwise answer 'no'.");
 
         for (int i = 0; i < NUMBER_OF_TRIES; i++) {
             int number = IGame.generateRandomInteger();
-            CliForEven.printQuestion(number);
+            EvenCli.printQuestion(number);
 
-            String playerAnswer = CliForEven.getAnswer();
+            String playerAnswer = EvenCli.getAnswer();
 
             if (number % 2 == 0 && "yes".equals(playerAnswer)) {
-                CliForEven.printCorrect();
+                EvenCli.printCorrect();
             } else if (number % 2 == 1 && "no".equals(playerAnswer)) {
-                CliForEven.printCorrect();
+                EvenCli.printCorrect();
             } else {
                 String correctAnswer = number % 2 == 0 ? "yes" : "no";
-                CliForEven.printError(playerName, correctAnswer, playerAnswer);
+                EvenCli.printError(playerName, correctAnswer, playerAnswer);
                 return;
             }
         }
 
-        CliForEven.printCongratulations(playerName);
+        EvenCli.printCongratulations(playerName);
     }
 }
