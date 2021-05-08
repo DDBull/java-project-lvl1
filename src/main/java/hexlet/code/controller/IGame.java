@@ -10,6 +10,11 @@ public interface IGame {
 
     static int generateRandomInteger() {
         Random rand = new Random();
-        return rand.nextInt(MAX_RANDOM);
+        return 1 + rand.nextInt(MAX_RANDOM);
+    }
+
+    static int generateRandomPositiveInteger() {
+        Random rand = new Random();
+        return 1 + rand.nextInt(MAX_RANDOM);
     }
 }

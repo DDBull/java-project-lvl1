@@ -4,6 +4,7 @@ import hexlet.code.view.EvenCli;
 
 public final class Even implements IGame {
 
+    @Override
     public void playTheGame() {
 
         String playerName = EvenCli.getPlayerName();

@@ -4,6 +4,7 @@ import hexlet.code.view.CalcCli;
 
 public final class Calc implements IGame {
 
+    @Override
     public void playTheGame() {
 
         String playerName = CalcCli.getPlayerName();
