@@ -17,7 +17,8 @@ public final class Even implements IGame {
 
             if (number % 2 == 0 && "yes".equals(playerAnswer)) {
                 EvenCli.printCorrect();
-            } else if (number % 2 == 1 && "no".equals(playerAnswer)) {
+            }
+            if (number % 2 == 1 && "no".equals(playerAnswer)) {
                 EvenCli.printCorrect();
             } else {
                 String correctAnswer = number % 2 == 0 ? "yes" : "no";

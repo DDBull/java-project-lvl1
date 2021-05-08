@@ -3,7 +3,7 @@ package hexlet.code.controller;
 import java.util.Random;
 
 public interface IGame {
-    int MAX_RANDOM = 1000;
+    int MAX_RANDOM = 100;
     int NUMBER_OF_TRIES = 3;
 
     void playTheGame();
