@@ -1,4 +1,6 @@
-package hexlet.code.view;
+package hexlet.code.view.games;
+
+import hexlet.code.view.Cli;
 
 public class GcdCli extends Cli {
     public static void printQuestion(int firstNumber, int secondNumber) {

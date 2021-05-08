@@ -1,4 +1,6 @@
-package hexlet.code.view;
+package hexlet.code.view.games;
+
+import hexlet.code.view.Cli;
 
 public class ProgressionCli extends Cli {
 

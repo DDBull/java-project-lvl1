@@ -1,12 +1,13 @@
-package hexlet.code.controller;
+package hexlet.code.controller.games;
 
 import java.util.Random;
 
 public interface IGame {
     int MAX_RANDOM = 100;
-    int NUMBER_OF_TRIES = 3;
+    String YES = "yes";
+    String NO = "no";
 
-    void playTheGame();
+    boolean playTheGame(String playerName);
 
     static int generateRandomInteger() {
         Random rand = new Random();
@@ -17,4 +18,6 @@ public interface IGame {
         Random rand = new Random();
         return 1 + rand.nextInt(MAX_RANDOM);
     }
+
+    void showInstructions();
 }
