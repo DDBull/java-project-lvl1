@@ -10,9 +10,13 @@ public class ProgressionCli extends Cli {
     public static void printQuestion(int[] series, int elementToHide, int seriesLength) {
         for (int i = 0; i < seriesLength; i++) {
             if (series[i] == elementToHide) {
-                System.out.print(".. ");
+                System.out.print("..");
             } else {
-                System.out.printf("%d ", series[i]);
+                System.out.printf("%d", series[i]);
+            }
+
+            if (i != seriesLength - 1) {
+                System.out.print(" ");
             }
         }
         System.out.println();
