@@ -1,6 +1,5 @@
 package hexlet.code.controller;
 
-import hexlet.code.view.GcdCli;
 import hexlet.code.view.ProgressionCli;
 
 public final class Progression implements IGame {
@@ -24,7 +23,7 @@ public final class Progression implements IGame {
             }
         }
 
-        GcdCli.printCongratulations(playerName);
+        ProgressionCli.printCongratulations(playerName);
     }
 
     private int generateQuestion() {

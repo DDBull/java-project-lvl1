@@ -6,6 +6,7 @@ import hexlet.code.controller.Greet;
 import hexlet.code.controller.IGame;
 import hexlet.code.controller.Gcd;
 import hexlet.code.controller.Progression;
+import hexlet.code.controller.Prime;
 import hexlet.code.view.Cli;
 
 public class App {
@@ -15,6 +16,7 @@ public class App {
     public static final int CALC = 3;
     public static final int GCD = 4;
     public static final int PROGRESSION = 5;
+    public static final int PRIME = 6;
     public static final int EXIT = 0;
 
     public static void main(String[] args) {
@@ -40,6 +42,10 @@ public class App {
             }
             case PROGRESSION -> {
                 game = new Progression();
+                game.playTheGame();
+            }
+            case PRIME -> {
+                game = new Prime();
                 game.playTheGame();
             }
             case EXIT -> Cli.finishTheApp();
