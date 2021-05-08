@@ -8,29 +8,30 @@ import hexlet.code.view.Cli;
 
 public class App {
 
+    public static final int GREET = 1;
+    public static final int EVEN = 2;
+    public static final int CALC = 3;
+    public static final int EXIT = 0;
 
     public static void main(String[] args) {
         int gameNumber = Cli.chooseGame();
         IGame game;
-        // CHECKSTYLE:OFF
+
         switch (gameNumber) {
-            case 1 -> { // Greet
+            case GREET -> {
                 game = new Greet();
                 game.playTheGame();
             }
-            case 2 -> { // Even
+            case EVEN -> {
                 game = new Even();
                 game.playTheGame();
             }
-            case 3 -> { // Calc
+            case CALC -> {
                 game = new Calc();
                 game.playTheGame();
             }
-            case 0 -> // Exit
-                    Cli.finishTheApp();
-            default -> // Error
-                    Cli.printError();
+            case EXIT -> Cli.finishTheApp();
+            default -> Cli.printError();
         }
-        // CHECKSTYLE:ON
     }
 }
