@@ -24,7 +24,7 @@ public final class Calc implements IGame {
             if (playerAnswer == correctAnswer) {
                 CalcCli.printCorrect();
             } else {
-                CalcCli.printError(playerName, correctAnswer, playerAnswer);
+                CalcCli.printWrong(playerName, correctAnswer, playerAnswer);
                 return;
             }
         }
