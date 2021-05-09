@@ -1,5 +1,5 @@
 ## Demo of the project:
-[![asciicast](https://asciinema.org/a/1iyXmq8XG6n5tOmAz2RCIP3F3.svg)](https://asciinema.org/a/1iyXmq8XG6n5tOmAz2RCIP3F3)
+[![asciicast](https://asciinema.org/a/412866.svg)](https://asciinema.org/a/412866)
 
 ### CodeClimate maintainability status:
 [![Maintainability](https://api.codeclimate.com/v1/badges/957eaa8f4c9bf512f392/maintainability)](https://codeclimate.com/github/DDBull/java-project-lvl1/maintainability)
