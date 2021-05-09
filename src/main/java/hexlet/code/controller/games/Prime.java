@@ -5,21 +5,13 @@ import hexlet.code.view.games.PrimeCli;
 public final class Prime implements IGame {
 
     @Override
-    public boolean playTheGame(final String playerName) {
-
+    public String getAnswerShowQuestion() {
         int number = IGame.generateRandomPositiveInteger();
         PrimeCli.printQuestion(number);
 
-        String playerAnswer = PrimeCli.getAnswer();
         String correctAnswer = isPrime(number) ? YES : NO;
 
-        if (correctAnswer.equals(playerAnswer)) {
-            PrimeCli.printCorrect();
-            return true;
-        }
-
-        PrimeCli.printWrong(playerName, correctAnswer, playerAnswer);
-        return false;
+        return correctAnswer;
     }
 
     @Override

@@ -45,7 +45,7 @@ public class Cli {
         finishTheApp();
     }
 
-    public static void printCongratulations(String playerName) {
+    public static void printCongratulations(final String playerName) {
         System.out.printf("Congratulations, %s!\n", playerName);
     }
 
@@ -58,7 +58,12 @@ public class Cli {
         return new Scanner(System.in).nextLine();
     }
 
-    public static void printStartingMessage(String message) {
+    public static void printWrong(final String playerName, final String correctAnswer, final String playerAnswer) {
+        System.out.printf("'%s' is wrong answer ;(. Correct answer was '%s'.\n", playerAnswer, correctAnswer);
+        System.out.printf("Let's try again, %s!\n", playerName);
+    }
+
+    public static void printStartingMessage(final String message) {
         System.out.println(message);
     }
 }

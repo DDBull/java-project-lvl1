@@ -5,22 +5,14 @@ import hexlet.code.view.games.GcdCli;
 public final class Gcd implements IGame {
 
     @Override
-    public boolean playTheGame(final String playerName) {
-
+    public String getAnswerShowQuestion() {
         int firstNumber = IGame.generateRandomPositiveInteger();
         int secondNumber = IGame.generateRandomPositiveInteger();
 
         GcdCli.printQuestion(firstNumber, secondNumber);
-        int playerAnswer = Integer.parseInt(GcdCli.getAnswer());
         int correctAnswer = findGCD(firstNumber, secondNumber);
 
-        if (playerAnswer == correctAnswer) {
-            GcdCli.printCorrect();
-            return true;
-        }
-
-        GcdCli.printWrong(playerName, correctAnswer, playerAnswer);
-        return false;
+        return Integer.toString(correctAnswer);
     }
 
     @Override

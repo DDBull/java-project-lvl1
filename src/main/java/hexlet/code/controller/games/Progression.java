@@ -7,26 +7,7 @@ public final class Progression implements IGame {
     private static final int SERIES_LENGTH = 10;
 
     @Override
-    public boolean playTheGame(final String playerName) {
-
-        int correctAnswer = generateQuestion();
-        int playerAnswer = Integer.parseInt(ProgressionCli.getAnswer());
-
-        if (playerAnswer == correctAnswer) {
-            ProgressionCli.printCorrect();
-            return true;
-        }
-
-        ProgressionCli.printWrong(playerName, correctAnswer, playerAnswer);
-        return false;
-    }
-
-    @Override
-    public void showInstructions() {
-        ProgressionCli.printStartingMessage("What number is missing in the progression?");
-    }
-
-    private int generateQuestion() {
+    public String getAnswerShowQuestion() {
         int[] series = new int[SERIES_LENGTH];
 
         series[0] = IGame.generateRandomInteger();
@@ -39,6 +20,11 @@ public final class Progression implements IGame {
         int elementToHide = series[IGame.generateRandomInteger() % SERIES_LENGTH];
         ProgressionCli.printQuestion(series, elementToHide, SERIES_LENGTH);
 
-        return elementToHide;
+        return Integer.toString(elementToHide);
+    }
+
+    @Override
+    public void showInstructions() {
+        ProgressionCli.printStartingMessage("What number is missing in the progression?");
     }
 }

@@ -4,7 +4,6 @@ import hexlet.code.controller.games.IGame;
 import hexlet.code.controller.games.Calc;
 import hexlet.code.controller.games.Even;
 import hexlet.code.controller.games.Gcd;
-import hexlet.code.controller.games.Greet;
 import hexlet.code.controller.games.Progression;
 import hexlet.code.controller.games.Prime;
 import hexlet.code.view.Cli;
@@ -24,7 +23,7 @@ public class Engine {
     public static void startEngine(final int gameNumber) {
 
         switch (gameNumber) {
-            case GREET -> new Greet().playTheGame("");
+            case GREET -> Cli.getPlayerName();
             case EVEN -> Engine.runEngine(new Even());
             case CALC -> Engine.runEngine(new Calc());
             case GCD -> Engine.runEngine(new Gcd());
@@ -36,13 +35,19 @@ public class Engine {
     }
 
     private static void runEngine(final IGame game) {
-        String playerName = Cli.getPlayerName();
+        final String playerName = Cli.getPlayerName();
         game.showInstructions();
 
         for (int i = 0; i < NUMBER_OF_TRIES; i++) {
-            if (!game.playTheGame(playerName)) {
+            String correctAnswer = game.getAnswerShowQuestion();
+            String playerAnswer = Cli.getAnswer();
+
+            if (!correctAnswer.equals(playerAnswer)) {
+                Cli.printWrong(playerName, correctAnswer, playerAnswer);
                 return;
             }
+
+            Cli.printCorrect();
         }
 
         Cli.printCongratulations(playerName);

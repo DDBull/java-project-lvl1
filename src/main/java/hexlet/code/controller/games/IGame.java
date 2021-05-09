@@ -7,7 +7,7 @@ public interface IGame {
     String YES = "yes";
     String NO = "no";
 
-    boolean playTheGame(String playerName);
+    String getAnswerShowQuestion();
 
     static int generateRandomInteger() {
         Random rand = new Random();
