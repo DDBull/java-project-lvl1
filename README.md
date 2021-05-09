@@ -1,6 +1,6 @@
 # Mind games
 
-A bunch of mini brain teasers that can be played on the command line. **Your boss won't notice!**
+A bunch of mini-brain teasers that can be played on the command line. **Your boss won't notice!**
 ## Description
 Currently, the app has 5 games: 
 
