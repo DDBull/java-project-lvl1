@@ -10,18 +10,25 @@ public class Game {
         final String playerName = Cli.getPlayerName();
         game.showInstructions();
 
-        for (int i = 0; i < NUMBER_OF_TRIES; i++) {
-            String correctAnswer = game.getAnswer();
-            String playerAnswer = Cli.getAnswer();
+        int i = 0;
+        String correctAnswer;
+        String playerAnswer;
 
-            if (!correctAnswer.equals(playerAnswer)) {
+        do {
+            ++i;
+
+            correctAnswer = game.getAnswer();
+            playerAnswer = Cli.getAnswer();
+
+            if (correctAnswer.equals(playerAnswer)) {
+                Cli.printCorrect();
+            } else {
                 Cli.printWrong(playerName, correctAnswer, playerAnswer);
-                return;
             }
+        } while (i < NUMBER_OF_TRIES && correctAnswer.equals(playerAnswer));
 
-            Cli.printCorrect();
+        if (i == NUMBER_OF_TRIES) {
+            Cli.printCongratulations(playerName);
         }
-
-        Cli.printCongratulations(playerName);
     }
 }

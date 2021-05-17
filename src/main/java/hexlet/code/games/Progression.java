@@ -28,7 +28,7 @@ public final class Progression implements IGame {
         Cli.printStartingMessage("What number is missing in the progression?");
     }
 
-    private static void printQuestion(int[] series, int elementToHide) {
+    private static void printQuestion(final int[] series, final int elementToHide) {
         System.out.print("Question: ");
 
         for (int i = 0; i < SERIES_LENGTH; i++) {
