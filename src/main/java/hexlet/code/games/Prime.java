@@ -1,13 +1,13 @@
-package hexlet.code.controller.games;
+package hexlet.code.games;
 
-import hexlet.code.view.games.PrimeCli;
+import hexlet.code.Cli;
 
 public final class Prime implements IGame {
 
     @Override
-    public String getAnswerShowQuestion() {
+    public String getAnswer() {
         int number = IGame.generateRandomPositiveInteger();
-        PrimeCli.printQuestion(number);
+        showQuestion(number);
 
         String correctAnswer = isPrime(number) ? YES : NO;
 
@@ -16,7 +16,7 @@ public final class Prime implements IGame {
 
     @Override
     public void showInstructions() {
-        PrimeCli.printStartingMessage("Answer 'yes' if given number is prime. Otherwise answer 'no'.");
+        Cli.printStartingMessage("Answer 'yes' if given number is prime. Otherwise answer 'no'.");
     }
 
     private boolean isPrime(int number) {
@@ -31,5 +31,9 @@ public final class Prime implements IGame {
         }
 
         return true;
+    }
+
+    private void showQuestion(final int number) {
+        Cli.printQuestion(String.format("Question: %d\n", number));
     }
 }

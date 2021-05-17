@@ -1,10 +1,10 @@
-package hexlet.code.view;
+package hexlet.code;
 
 import java.util.Scanner;
 
 public class Cli {
 
-    public static int chooseGame() {
+    public static int getGameChoice() {
 
         Scanner input = new Scanner(System.in);
 
@@ -36,13 +36,18 @@ public class Cli {
         return playerName;
     }
 
-    public static void finishTheApp() {
+    public static String getAnswer() {
+        System.out.print("Your answer: ");
+        return new Scanner(System.in).nextLine();
+    }
+
+    public static void printFinish() {
         System.out.println("Quitting the game. Bye!");
     }
 
     public static void printError() {
         System.out.println("ERROR! Invalid input!");
-        finishTheApp();
+        printFinish();
     }
 
     public static void printCongratulations(final String playerName) {
@@ -53,11 +58,6 @@ public class Cli {
         System.out.println("Correct!");
     }
 
-    public static String getAnswer() {
-        System.out.print("Your answer: ");
-        return new Scanner(System.in).nextLine();
-    }
-
     public static void printWrong(final String playerName, final String correctAnswer, final String playerAnswer) {
         System.out.printf("'%s' is wrong answer ;(. Correct answer was '%s'.\n", playerAnswer, correctAnswer);
         System.out.printf("Let's try again, %s!\n", playerName);
@@ -65,5 +65,9 @@ public class Cli {
 
     public static void printStartingMessage(final String message) {
         System.out.println(message);
+    }
+
+    public static void printQuestion(final String question) {
+        System.out.println(question);
     }
 }

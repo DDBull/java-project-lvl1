@@ -1,4 +1,4 @@
-package hexlet.code.controller.games;
+package hexlet.code.games;
 
 import java.util.Random;
 
@@ -8,7 +8,7 @@ public interface IGame {
     String YES = "yes";
     String NO = "no";
 
-    String getAnswerShowQuestion();
+    String getAnswer();
 
     void showInstructions();
 

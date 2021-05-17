@@ -1,18 +1,18 @@
-package hexlet.code.controller.games;
+package hexlet.code.games;
 
-import hexlet.code.view.games.CalcCli;
+import hexlet.code.Cli;
 
 public final class Calc implements IGame {
 
     @Override
-    public String getAnswerShowQuestion() {
+    public String getAnswer() {
         int firstNumber = IGame.generateRandomInteger();
         int secondNumber = IGame.generateRandomInteger();
 
         char[] availableOperators = {'+', '-', '*'};
         char operator = availableOperators[IGame.generateRandomInteger() % availableOperators.length];
 
-        CalcCli.printQuestion(firstNumber, secondNumber, operator);
+        showQuestion(firstNumber, secondNumber, operator);
 
         int correctAnswer = calculateAnswer(firstNumber, secondNumber, operator);
 
@@ -21,7 +21,11 @@ public final class Calc implements IGame {
 
     @Override
     public void showInstructions() {
-        CalcCli.printStartingMessage("What is the result of the expression?");
+        Cli.printStartingMessage("What is the result of the expression?");
+    }
+
+    private void showQuestion(int firstNumber, int secondNumber, char operator) {
+        Cli.printQuestion(String.format("Question: %d %c %d\n", firstNumber, operator, secondNumber));
     }
 
     private int calculateAnswer(int firstNumber, int secondNumber, char operator) {
