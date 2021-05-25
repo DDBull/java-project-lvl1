@@ -15,7 +15,7 @@ public final class Even implements IGame {
 
     @Override
     public void showInstructions() {
-        Cli.printStartingMessage("Answer 'yes' if the number is even, otherwise answer 'no'.");
+        Cli.printMessage("Answer 'yes' if the number is even, otherwise answer 'no'.");
     }
 
     private boolean isEven(final int number) {
@@ -23,6 +23,6 @@ public final class Even implements IGame {
     }
 
     private void showQuestion(final int number) {
-        Cli.printQuestion(String.format("Question: %d\n", number));
+        Cli.printMessage(String.format("Question: %d\n", number));
     }
 }

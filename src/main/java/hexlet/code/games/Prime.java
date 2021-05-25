@@ -16,7 +16,7 @@ public final class Prime implements IGame {
 
     @Override
     public void showInstructions() {
-        Cli.printStartingMessage("Answer 'yes' if given number is prime. Otherwise answer 'no'.");
+        Cli.printMessage("Answer 'yes' if given number is prime. Otherwise answer 'no'.");
     }
 
     private boolean isPrime(int number) {
@@ -34,6 +34,6 @@ public final class Prime implements IGame {
     }
 
     private void showQuestion(final int number) {
-        Cli.printQuestion(String.format("Question: %d\n", number));
+        Cli.printMessage(String.format("Question: %d\n", number));
     }
 }

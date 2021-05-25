@@ -25,7 +25,7 @@ public final class Progression implements IGame {
 
     @Override
     public void showInstructions() {
-        Cli.printStartingMessage("What number is missing in the progression?");
+        Cli.printMessage("What number is missing in the progression?");
     }
 
     private static void printQuestion(final int[] series, final int elementToHide) {

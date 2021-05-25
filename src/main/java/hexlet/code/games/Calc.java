@@ -21,11 +21,11 @@ public final class Calc implements IGame {
 
     @Override
     public void showInstructions() {
-        Cli.printStartingMessage("What is the result of the expression?");
+        Cli.printMessage("What is the result of the expression?");
     }
 
     private void showQuestion(int firstNumber, int secondNumber, char operator) {
-        Cli.printQuestion(String.format("Question: %d %c %d\n", firstNumber, operator, secondNumber));
+        Cli.printMessage(String.format("Question: %d %c %d\n", firstNumber, operator, secondNumber));
     }
 
     private int calculateAnswer(int firstNumber, int secondNumber, char operator) {

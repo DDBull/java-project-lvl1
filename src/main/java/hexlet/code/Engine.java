@@ -13,6 +13,7 @@ public class Engine {
         int i = 0;
         String correctAnswer;
         String playerAnswer;
+        boolean allAnswersTrue = true;
 
         do {
             ++i;
@@ -21,14 +22,15 @@ public class Engine {
             playerAnswer = Cli.getAnswer();
 
             if (correctAnswer.equals(playerAnswer)) {
-                Cli.printCorrect();
+                IGame.printCorrect();
             } else {
-                Cli.printWrong(playerName, correctAnswer, playerAnswer);
+                IGame.printWrong(playerName, correctAnswer, playerAnswer);
+                allAnswersTrue = false;
             }
         } while (i < NUMBER_OF_TRIES && correctAnswer.equals(playerAnswer));
 
-        if (i == NUMBER_OF_TRIES) {
-            Cli.printCongratulations(playerName);
+        if (allAnswersTrue) {
+            IGame.printCongratulations(playerName);
         }
     }
 }

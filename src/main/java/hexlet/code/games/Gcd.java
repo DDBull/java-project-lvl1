@@ -17,7 +17,7 @@ public final class Gcd implements IGame {
 
     @Override
     public void showInstructions() {
-        Cli.printStartingMessage("Find the greatest common divisor of given numbers.");
+        Cli.printMessage("Find the greatest common divisor of given numbers.");
     }
 
     private int findGCD(int firstNumber, int secondNumber) {
@@ -35,6 +35,6 @@ public final class Gcd implements IGame {
     }
 
     private void showQuestion(final int firstNumber, final int secondNumber) {
-        Cli.printQuestion(String.format("Question: %d %d\n", firstNumber, secondNumber));
+        Cli.printMessage(String.format("Question: %d %d\n", firstNumber, secondNumber));
     }
 }

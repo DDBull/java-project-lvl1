@@ -5,6 +5,7 @@ import hexlet.code.games.Even;
 import hexlet.code.games.Gcd;
 import hexlet.code.games.Progression;
 import hexlet.code.games.Prime;
+import hexlet.code.games.IGame;
 
 public class App {
 
@@ -26,8 +27,8 @@ public class App {
             case GCD -> Engine.play(new Gcd());
             case PROGRESSION -> Engine.play(new Progression());
             case PRIME -> Engine.play(new Prime());
-            case EXIT -> Cli.printFinish();
-            default -> Cli.printError();
+            case EXIT -> IGame.printFinish();
+            default -> IGame.printError();
         }
     }
 }
