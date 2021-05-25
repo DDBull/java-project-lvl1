@@ -1,7 +1,5 @@
 package hexlet.code.games;
 
-import hexlet.code.Cli;
-
 import java.util.Random;
 
 public interface IGame {
@@ -25,24 +23,28 @@ public interface IGame {
     }
 
     static void printCorrect() {
-        Cli.printMessage("Correct!");
+        System.out.println("Correct!");
     }
 
     static void printError() {
-        Cli.printMessage("ERROR! Invalid input!");
+        System.out.println("ERROR! Invalid input!");
         printFinish();
     }
 
     static void printWrong(final String playerName, final String correctAnswer, final String playerAnswer) {
-        Cli.printMessage(String.format("'%s' is wrong answer ;(. Correct answer was '%s'.\nLet's try again, %s!",
-                playerAnswer, correctAnswer, playerName));
+        System.out.printf("'%s' is wrong answer ;(. Correct answer was '%s'.\n", playerAnswer, correctAnswer);
+        System.out.printf("Let's try again, %s!\n", playerName);
     }
 
     static void printFinish() {
-        Cli.printMessage("Quitting the game. Bye!");
+        System.out.println("Quitting the game. Bye!");
     }
 
     static void printCongratulations(final String playerName) {
-        Cli.printMessage(String.format("Congratulations, %s!\n", playerName));
+        System.out.printf("Congratulations, %s!\n", playerName);
+    }
+
+    static void printMessage(final String message) {
+        System.out.println(message);
     }
 }

@@ -1,7 +1,5 @@
 package hexlet.code.games;
 
-import hexlet.code.Cli;
-
 public final class Prime implements IGame {
 
     @Override
@@ -16,7 +14,7 @@ public final class Prime implements IGame {
 
     @Override
     public void showInstructions() {
-        Cli.printMessage("Answer 'yes' if given number is prime. Otherwise answer 'no'.");
+        IGame.printMessage("Answer 'yes' if given number is prime. Otherwise answer 'no'.");
     }
 
     private boolean isPrime(int number) {
@@ -34,6 +32,6 @@ public final class Prime implements IGame {
     }
 
     private void showQuestion(final int number) {
-        Cli.printMessage(String.format("Question: %d\n", number));
+        IGame.printMessage(String.format("Question: %d\n", number));
     }
 }

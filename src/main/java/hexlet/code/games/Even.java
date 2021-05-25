@@ -1,7 +1,5 @@
 package hexlet.code.games;
 
-import hexlet.code.Cli;
-
 public final class Even implements IGame {
 
     @Override
@@ -15,7 +13,7 @@ public final class Even implements IGame {
 
     @Override
     public void showInstructions() {
-        Cli.printMessage("Answer 'yes' if the number is even, otherwise answer 'no'.");
+        IGame.printMessage("Answer 'yes' if the number is even, otherwise answer 'no'.");
     }
 
     private boolean isEven(final int number) {
@@ -23,6 +21,6 @@ public final class Even implements IGame {
     }
 
     private void showQuestion(final int number) {
-        Cli.printMessage(String.format("Question: %d\n", number));
+        IGame.printMessage(String.format("Question: %d\n", number));
     }
 }

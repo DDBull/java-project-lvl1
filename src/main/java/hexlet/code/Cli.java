@@ -40,8 +40,4 @@ public class Cli {
         System.out.print("Your answer: ");
         return new Scanner(System.in).nextLine();
     }
-
-    public static void printMessage(final String message) {
-        System.out.println(message);
-    }
 }

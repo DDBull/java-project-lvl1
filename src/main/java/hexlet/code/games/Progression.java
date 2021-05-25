@@ -1,7 +1,5 @@
 package hexlet.code.games;
 
-import hexlet.code.Cli;
-
 public final class Progression implements IGame {
 
     private static final int SERIES_LENGTH = 10;
@@ -25,7 +23,7 @@ public final class Progression implements IGame {
 
     @Override
     public void showInstructions() {
-        Cli.printMessage("What number is missing in the progression?");
+        IGame.printMessage("What number is missing in the progression?");
     }
 
     private static void printQuestion(final int[] series, final int elementToHide) {

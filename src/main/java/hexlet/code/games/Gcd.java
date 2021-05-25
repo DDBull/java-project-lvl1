@@ -1,7 +1,5 @@
 package hexlet.code.games;
 
-import hexlet.code.Cli;
-
 public final class Gcd implements IGame {
 
     @Override
@@ -17,7 +15,7 @@ public final class Gcd implements IGame {
 
     @Override
     public void showInstructions() {
-        Cli.printMessage("Find the greatest common divisor of given numbers.");
+        IGame.printMessage("Find the greatest common divisor of given numbers.");
     }
 
     private int findGCD(int firstNumber, int secondNumber) {
@@ -35,6 +33,6 @@ public final class Gcd implements IGame {
     }
 
     private void showQuestion(final int firstNumber, final int secondNumber) {
-        Cli.printMessage(String.format("Question: %d %d\n", firstNumber, secondNumber));
+        IGame.printMessage(String.format("Question: %d %d\n", firstNumber, secondNumber));
     }
 }
