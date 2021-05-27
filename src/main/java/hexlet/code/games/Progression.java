@@ -3,6 +3,7 @@ package hexlet.code.games;
 public final class Progression implements IGame {
 
     private static final String INSTRUCTION = "What number is missing in the progression?";
+    private static final String QUESTION = "Question: ";
     private static final int SERIES_LENGTH = 10;
 
     private int[] series = new int[SERIES_LENGTH];
@@ -34,7 +35,7 @@ public final class Progression implements IGame {
 
     @Override
     public void showQuestion() {
-        System.out.print("Question: ");
+        System.out.print(QUESTION);
 
         for (int i = 0; i < SERIES_LENGTH; i++) {
             if (series[i] == elementToHide) {
