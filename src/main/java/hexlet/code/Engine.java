@@ -18,7 +18,9 @@ public class Engine {
         do {
             ++i;
 
+            game.initGame();
             correctAnswer = game.getAnswer();
+            game.showQuestion();
             playerAnswer = Cli.getAnswer();
 
             if (correctAnswer.equals(playerAnswer)) {

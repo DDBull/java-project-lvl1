@@ -5,12 +5,19 @@ import java.util.Random;
 public interface IGame {
 
     int MAX_RANDOM = 100;
+    String CORRECT = "Correct!";
+    String INVALID_INPUT = "ERROR! Invalid input!";
+    String QUIT_BYE = "Quitting the game. Bye!";
     String YES = "yes";
     String NO = "no";
 
     String getAnswer();
 
+    void initGame();
+
     void showInstructions();
+
+    void showQuestion();
 
     static int generateRandomInteger() {
         Random rand = new Random();
@@ -23,11 +30,11 @@ public interface IGame {
     }
 
     static void printCorrect() {
-        System.out.println("Correct!");
+        System.out.println(CORRECT);
     }
 
     static void printError() {
-        System.out.println("ERROR! Invalid input!");
+        System.out.println(INVALID_INPUT);
         printFinish();
     }
 
@@ -37,7 +44,7 @@ public interface IGame {
     }
 
     static void printFinish() {
-        System.out.println("Quitting the game. Bye!");
+        System.out.println(QUIT_BYE);
     }
 
     static void printCongratulations(final String playerName) {

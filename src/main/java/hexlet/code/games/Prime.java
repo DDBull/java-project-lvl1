@@ -2,22 +2,28 @@ package hexlet.code.games;
 
 public final class Prime implements IGame {
 
+    private static final String INSTRUCTION = "Answer 'yes' if given number is prime. Otherwise answer 'no'.";
+
+    private int number;
+    private String correctAnswer;
+
+    @Override
+    public void initGame() {
+        number = IGame.generateRandomPositiveInteger();
+        correctAnswer = isPrime() ? YES : NO;
+    }
+
     @Override
     public String getAnswer() {
-        int number = IGame.generateRandomPositiveInteger();
-        showQuestion(number);
-
-        String correctAnswer = isPrime(number) ? YES : NO;
-
         return correctAnswer;
     }
 
     @Override
     public void showInstructions() {
-        IGame.printMessage("Answer 'yes' if given number is prime. Otherwise answer 'no'.");
+        IGame.printMessage(INSTRUCTION);
     }
 
-    private boolean isPrime(int number) {
+    private boolean isPrime() {
         if (number < 2) {
             return false;
         }
@@ -31,7 +37,8 @@ public final class Prime implements IGame {
         return true;
     }
 
-    private void showQuestion(final int number) {
+    @Override
+    public void showQuestion() {
         IGame.printMessage(String.format("Question: %d\n", number));
     }
 }

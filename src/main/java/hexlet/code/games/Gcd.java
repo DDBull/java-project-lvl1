@@ -2,37 +2,46 @@ package hexlet.code.games;
 
 public final class Gcd implements IGame {
 
+    private static final String INSTRUCTION = "Find the greatest common divisor of given numbers.";
+
+    private int firstNumber;
+    private int secondNumber;
+    private String correctAnswer;
+
+    @Override
+    public void initGame() {
+        firstNumber = IGame.generateRandomPositiveInteger();
+        secondNumber = IGame.generateRandomPositiveInteger();
+
+        correctAnswer = Integer.toString(findGCD(firstNumber, secondNumber));
+    }
+
     @Override
     public String getAnswer() {
-        int firstNumber = IGame.generateRandomPositiveInteger();
-        int secondNumber = IGame.generateRandomPositiveInteger();
-
-        showQuestion(firstNumber, secondNumber);
-        int correctAnswer = findGCD(firstNumber, secondNumber);
-
-        return Integer.toString(correctAnswer);
+        return correctAnswer;
     }
 
     @Override
     public void showInstructions() {
-        IGame.printMessage("Find the greatest common divisor of given numbers.");
+        IGame.printMessage(INSTRUCTION);
     }
 
-    private int findGCD(int firstNumber, int secondNumber) {
-        if (firstNumber < secondNumber) {
-            int temp = firstNumber;
-            firstNumber = secondNumber;
-            secondNumber = temp;
+    private int findGCD(int a, int b) {
+        if (a < b) {
+            int temp = a;
+            a = b;
+            b = temp;
         }
 
-        if (firstNumber % secondNumber == 0) {
-            return secondNumber;
+        if (a % b == 0) {
+            return b;
         }
 
-        return findGCD(firstNumber - secondNumber, secondNumber);
+        return findGCD(a - b, b);
     }
 
-    private void showQuestion(final int firstNumber, final int secondNumber) {
+    @Override
+    public void showQuestion() {
         IGame.printMessage(String.format("Question: %d %d\n", firstNumber, secondNumber));
     }
 }

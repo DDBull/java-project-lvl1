@@ -2,31 +2,40 @@ package hexlet.code.games;
 
 public final class Calc implements IGame {
 
+    private static final String INSTRUCTION = "What is the result of the expression?";
+
+    private int firstNumber;
+    private int secondNumber;
+    private char operator;
+    private String correctAnswer;
+
     @Override
-    public String getAnswer() {
-        int firstNumber = IGame.generateRandomInteger();
-        int secondNumber = IGame.generateRandomInteger();
+    public void initGame() {
+        firstNumber = IGame.generateRandomInteger();
+        secondNumber = IGame.generateRandomInteger();
 
         char[] availableOperators = {'+', '-', '*'};
-        char operator = availableOperators[IGame.generateRandomInteger() % availableOperators.length];
+        operator = availableOperators[IGame.generateRandomInteger() % availableOperators.length];
 
-        showQuestion(firstNumber, secondNumber, operator);
+        correctAnswer = Integer.toString(calculateAnswer());
+    }
 
-        int correctAnswer = calculateAnswer(firstNumber, secondNumber, operator);
-
-        return Integer.toString(correctAnswer);
+    @Override
+    public String getAnswer() {
+        return correctAnswer;
     }
 
     @Override
     public void showInstructions() {
-        IGame.printMessage("What is the result of the expression?");
+        IGame.printMessage(INSTRUCTION);
     }
 
-    private void showQuestion(int firstNumber, int secondNumber, char operator) {
+    @Override
+    public void showQuestion() {
         IGame.printMessage(String.format("Question: %d %c %d\n", firstNumber, operator, secondNumber));
     }
 
-    private int calculateAnswer(int firstNumber, int secondNumber, char operator) {
+    private int calculateAnswer() {
         switch (operator) {
             case '+' -> {
                 return firstNumber + secondNumber;

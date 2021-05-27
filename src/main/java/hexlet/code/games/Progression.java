@@ -2,12 +2,15 @@ package hexlet.code.games;
 
 public final class Progression implements IGame {
 
+    private static final String INSTRUCTION = "What number is missing in the progression?";
     private static final int SERIES_LENGTH = 10;
 
-    @Override
-    public String getAnswer() {
-        int[] series = new int[SERIES_LENGTH];
+    private int[] series = new int[SERIES_LENGTH];
+    private int elementToHide;
+    private String correctAnswer;
 
+    @Override
+    public void initGame() {
         series[0] = IGame.generateRandomInteger();
         int step = IGame.generateRandomInteger() - IGame.generateRandomInteger();
 
@@ -15,18 +18,22 @@ public final class Progression implements IGame {
             series[i] = series[i - 1] + step;
         }
 
-        int elementToHide = series[IGame.generateRandomInteger() % SERIES_LENGTH];
-        printQuestion(series, elementToHide);
+        elementToHide = series[IGame.generateRandomInteger() % SERIES_LENGTH];
+        correctAnswer = Integer.toString(elementToHide);
+    }
 
-        return Integer.toString(elementToHide);
+    @Override
+    public String getAnswer() {
+        return correctAnswer;
     }
 
     @Override
     public void showInstructions() {
-        IGame.printMessage("What number is missing in the progression?");
+        IGame.printMessage(INSTRUCTION);
     }
 
-    private static void printQuestion(final int[] series, final int elementToHide) {
+    @Override
+    public void showQuestion() {
         System.out.print("Question: ");
 
         for (int i = 0; i < SERIES_LENGTH; i++) {
